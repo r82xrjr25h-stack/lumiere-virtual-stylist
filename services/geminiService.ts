@@ -1,8 +1,8 @@
-
 import { GoogleGenAI, GenerateContentResponse } from "@google/genai";
 import { OutfitOccasion } from "../types";
 
-const getAI = () => new GoogleGenAI({ apiKey:import.meta.env.VITE_GOOGLE_GEN_AI_API_KEY || '' });
+const getAI = () => new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+
 export const generateOutfitSuggestion = async (
   baseImageBase64: string,
   occasion: OutfitOccasion
@@ -18,7 +18,7 @@ export const generateOutfitSuggestion = async (
   Respond with ONLY the generated image. If you provide a description, keep it brief and separate.`;
 
   const response: GenerateContentResponse = await ai.models.generateContent({
-    model: 'gemini-1.5-flash',
+    model: 'gemini-2.5-flash-image',
     contents: {
       parts: [
         {
@@ -63,7 +63,7 @@ export const editImageWithPrompt = async (
   Respond with ONLY the modified image.`;
 
   const response: GenerateContentResponse = await ai.models.generateContent({
-    model: 'gemini-1.5-flash',
+    model: 'gemini-2.5-flash-image',
     contents: {
       parts: [
         {
