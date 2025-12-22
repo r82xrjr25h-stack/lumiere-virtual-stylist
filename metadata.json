@@ -1,0 +1,7 @@
+{
+  "name": "Lumière Virtual Stylist",
+  "description": "An AI-powered fashion assistant that creates professional flat-lay outfit suggestions based on your own clothing items. Features casual, business, and night-out styling with advanced image editing capabilities.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
