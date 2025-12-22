@@ -2,8 +2,7 @@
 import { GoogleGenAI, GenerateContentResponse } from "@google/genai";
 import { OutfitOccasion } from "../types";
 
-const getAI = () => new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
-
+const getAI = () => new GoogleGenAI({ apiKey: import.meta.env.VITE_GOOGLE_GEN_AI_API_KEY || '' });
 export const generateOutfitSuggestion = async (
   baseImageBase64: string,
   occasion: OutfitOccasion
